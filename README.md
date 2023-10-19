@@ -1,53 +1,49 @@
-# Bazel examples and tutorials
+Building a REST API Project with Bazel and Spring Boot
+Welcome to the "Building a REST API Project with Bazel and Spring Boot" project! This README provides detailed information on how to set up, code, and run a REST API project using Spring Boot and Bazel. Follow the steps below to get started.
 
-A collection of examples of how to use the Bazel build system.
+Requirements
+Before you begin, make sure you have the following requirements installed:
 
-## Introductory tutorials
+Java Development Kit (JDK): Ensure that you have the JDK installed on your system. You can download and install it from the official Oracle website.
 
- * [C++ basics](/cpp-tutorial)
- * [Java basics](/java-tutorial)
- * [End to End](/tutorial)
-   <br/>A full end-to-end system with a backend, an Android app, and an iOS app.
- * [iOS basics](/tutorial/ios-app)
- * [Using query](/query-quickstart)
-   <br/>Working examples for [The Query quickstart](https://bazel.build/query/quickstart)
+Bazel: We use Bazel as our build tool. Install Bazel using the Scoop package manager on Windows or refer to the official Bazel installation guide for other platforms.
 
- ## Example cookbook
+Git: You'll need Git to clone the example project from the Bazel repository.
 
- ### General
+Setup
+Step 1: Installing JDK
+Download the JDK installer for your system from the official website.
+Run the installer and follow the installation instructions.
+Set the JAVA_HOME environment variable to the JDK installation path. This is essential for the next steps.
+Step 2: Installing Bazel with Scoop
+Open PowerShell.
 
- * [Using bzlmod](/bzlmod)
- * [How to generate source code from a rule and include it in a library](/rules/generating_code)
+Execute the following command to install Scoop:
 
- ### [Android](/tree/main/android)
+powershell
+Copy code
+iex (new-object net.webclient).downloadstring('https://get.scoop.sh')
+Once Scoop is installed, install Bazel using the following command:
 
- * [Using Android Jetpack Compose](/firebase-cloud-messaging)
- * [Using Firebase Cloud Messaging](/jetpack-compose)
- * [Using the NDK](/android/ndk)
- * [Using Roboelectic tests and Kotlin](/android/robolectric-testing)
+powershell
+Copy code
+scoop install bazel
+Step 3: Cloning the Example Project
+Clone the example project from the Bazel repository using the following command:
 
- ### Java
+bash
+Copy code
+git clone <repository_url>
+Coding
+With the prerequisites in place, you can now start coding your REST API project. This project is built using Spring Boot and Bazel, so you can follow standard Spring Boot practices for creating endpoints, services, and controllers. Don't forget to implement the 'hello' endpoint as described in the video.
 
- * [Using Java with Maven](/java-maven)
+Demo
+To run and test your REST API project, follow these steps:
 
- ### [Rule writing](/rules)
-
- * [Accessing attributes of a rule](/rules/attributes)
- * [A rule with both explict and implicit outputs](/rules/implicit_output)
- * [Creating a simple `*_test` rule](/rules/test_rule)
- * [Rules that change the build flags](/configurations)
- * [Rules with implicit dependencies](/rules/computed_dependencies)
- * [Using a macro wrapper to compute an output file name](/rules/optional_provider)
- * [Using aspects](/rules/aspect)
- * [Using ctx.actions.expand_template](/rules/expand_template)
- * [Using ctx.actions.run_shell to wrap simple commands](/rules/shell_command)
- * [Using ctx.actions.run to run a tool](/rules/actions_run)
- * [Using ctx.actions.write to create a file at analysis time](/rules/actions_write)
- * [Using depsets](/rules/depsets)
- * [Using "Make" variables in your rules](/make-variables)
- * [Using mandatory providers to ensure your dependencies are of the right type](/rules/mandatory_provider)
- * [Using runfiles](/rules/runfiles)
-
-
-CI:
-[![Build status](https://badge.buildkite.com/260bbace6a4067a3c60539a31fed1191d341a24cb0bfeb0e23.svg)](https://buildkite.com/bazel/bazel-bazel-examples)
+Navigate to your project directory in the terminal.
+Use Bazel to build and run your project:
+bash
+Copy code
+bazel build //:your-api
+bazel-bin/your-api
+Your API should now be running, and you can access it through your browser or a tool like Postman. Make a GET request to the '/hello' endpoint to see it in action.
