@@ -1,4 +1,4 @@
-Building a REST API Project with Bazel and Spring Boot
+#Building a REST API Project with Bazel and Spring Boot
 Welcome to the "Building a REST API Project with Bazel and Spring Boot" project! This README provides detailed information on how to set up, code, and run a REST API project using Spring Boot and Bazel. Follow the steps below to get started.
 
 Requirements
